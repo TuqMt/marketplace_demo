@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Маркетплейс</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+        .card {
+            width: 250px;
+            background: white;
+            border-radius: 8px;
+            margin: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            padding: 16px;
+            text-align: center;
+        }
+        .card h3 {
+            margin: 10px 0 5px;
+            font-size: 18px;
+        }
+        .card p {
+            font-size: 14px;
+            color: #555;
+        }
+        .card .price {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .card form button {
+            margin-top: 10px;
+            padding: 8px 16px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        .corner-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #086ec7;
+            color: white;
+            padding: 10px 16px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+
+    <a class="corner-button" href="/profile">Профиль</a>
+
+    <h1 style="text-align:center;">Добро пожаловать в наш маркетплейс!</h1>
+
+
+    <div class="container">
+        {% for product in products %}
+        <div class="card">
+            <img src="{{ product.image_url }}" alt="{{ product.name }}" style="width:100%; height:150px; object-fit:cover; border-radius:6px;">
+            <h3>{{ product.name }}</h3>
+            <p><strong>Категория:</strong> {{ product.category }}</p>
+            <p>{{ product.description }}</p>
+            <div class="price">{{ product.price }} ₸</div>
+            <form method="POST" action="/buy/{{ product.name }}">
+                <button type="submit">Купить</button>
+            </form>
+        </div>
+
+        {% endfor %}
+    </div>
+</body>
+</html>

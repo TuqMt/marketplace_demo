@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>История покупок</title>
+    <style>
+        body {
+            font-family: Arial;
+            padding: 20px;
+            background-color: #f2f2f2;
+            margin: 0;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .purchase {
+            background: white;
+            margin: 10px auto;
+            padding: 15px;
+            border-radius: 8px;
+            max-width: 400px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+
+        .purchase p {
+            margin: 5px 0;
+        }
+
+        .top-link {
+            text-align: center;
+            margin: 20px;
+        }
+
+        .top-link a {
+            text-decoration: none;
+            padding: 10px 20px;
+            background-color: #086ec7;
+            color: white;
+            border-radius: 6px;
+        }
+
+        .corner-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #086ec7;
+            color: white;
+            padding: 10px 16px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+
+    <a class="corner-button" href="/items">Покупки</a>
+
+    <h1>История всех покупок</h1>
+    
+
+    {% if purchases %}
+        {% for date, name, price in purchases %}
+        <div class="purchase">
+            <p><strong>Дата:</strong> {{ date }}</p>
+            <p><strong>Товар:</strong> {{ name }}</p>
+            <p><strong>Цена:</strong> {{ price }} ₸</p>
+        </div>
+        {% endfor %}
+    {% else %}
+        <p style="text-align:center;">Пока нет покупок.</p>
+    {% endif %}
+
+</body>
+</html>
