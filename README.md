@@ -41,12 +41,13 @@ CREATE TABLE buys (
 ```
 
 ### 3. Добавь товары (пример запроса):
+```
 INSERT INTO items (name, description, price, category, image_url) VALUES
 ('Яблоко', 'Свежее красное яблоко', 120, 'Фрукты', 'https://loremflickr.com/320/240/apple'),
 ('Банан', 'Спелый банан из Эквадора', 180, 'Фрукты', 'https://loremflickr.com/320/240/banana'),
 -- Добавь свои товары по аналогии
 ;
-
+```
 
 4. Запусти сервер:
 ```
