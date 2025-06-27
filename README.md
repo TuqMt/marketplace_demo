@@ -66,7 +66,8 @@ ngrok http 5000
 ```
 Структура проекта
 .
-├── app.py                  # Flask-приложение /n
+├── app.py                  # Flask-приложение 
+
 ├── templates/                                 /n
 │   ├── home.html           # Главная страница
 │   ├── index.html          # Страница товаров
