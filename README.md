@@ -65,12 +65,17 @@ ngrok config add-authtoken <твой_токен>
 ngrok http 5000
 ```
 Структура проекта
-.
+
+
 ├── app.py                  # Flask-приложение 
 
-├── templates/                                 /n
+├── templates/  
+
 │   ├── home.html           # Главная страница
+
 │   ├── index.html          # Страница товаров
+
 │   └── profile.html        # История покупок
+
 └── README.md               # Этот файл
 
